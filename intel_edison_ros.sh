@@ -37,7 +37,7 @@ cd ~/ros_catkin_ws
 echo "*** rosinstall ***"
 #   This will install only mavros and not mavros-extras (no image
 #   support which the Edison can’t really handle well anyway).
-rosinstall_generator ros_comm mavros myahrs_driver --rosdistro indigo --deps --wet-only --exclude roslisp --tar > indigo-ros_comm-wet.rosinstall
+rosinstall_generator ros_comm myahrs_driver --rosdistro indigo --deps --wet-only --exclude roslisp --tar > indigo-ros_comm-wet.rosinstall
 
 echo "*** wstool ***"
 sudo wstool init src -j1 indigo-ros_comm-wet.rosinstall
@@ -74,7 +74,7 @@ echo “About to start some heavy building. Go have a looong coffee break.”
 echo “******************************************************************”
 
 echo "*** Building ROS ***"
-sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release -DMAVLINK_DIALECT=pixhawk --install-space /home/ros/indigo
+sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /home/ros/indigo
 
 sudo ln -sf /home/ros /opt/
 
