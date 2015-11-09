@@ -37,7 +37,7 @@ cd ~/ros_catkin_ws
 echo "*** rosinstall ***"
 #   This will install only mavros and not mavros-extras (no image
 #   support which the Edison can’t really handle well anyway).
-rosinstall_generator ros_comm mavros myahrs_driver --rosdistro indigo --deps --wet-only --exclude roslisp --tar > indigo-ros_comm-wet.rosinstall
+rosinstall_generator ros_comm mavros myahrs_driver velodyne_msg velodyne_driver --rosdistro indigo --deps --wet-only --exclude roslisp --tar > indigo-ros_comm-wet.rosinstall
 
 echo "*** wstool ***"
 sudo wstool init src -j1 indigo-ros_comm-wet.rosinstall
